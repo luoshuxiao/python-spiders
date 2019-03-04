@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+   boos_job -- {{ city }} -- {{ keywords }}
+   <form method="POST">
+       {% csrf_token %}
+       <input type="text" name="c_name">
+       <button type="submit">搜索</button>
+   </form>
+       {% for item in data %}
+
+           <p>
+               {{ forloop.counter }}--
+                 公司：
+               {{item.company_name}}
+                 地址：
+               {{ item.address}}
+                 职位：
+               {{item.job_name}}
+                 薪水：
+               {{item.salary}}
+                 要求：
+               {{item.education}}
+               {{item.experience}}
+           </p>
+           <p>
+                工作描述：
+               {{item.job_describe}}
+           </p>
+       {% endfor %}
+</body>
+</html>
